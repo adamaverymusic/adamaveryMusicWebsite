@@ -1,7 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+
+</html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Judah Avery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/responsive.css">-->
+
+    <!-- Font Awesome and Bootstrap -->
+    <script src="https://kit.fontawesome.com/f17e9d136a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900|Roboto:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+    </style>
+
+    <link rel="icon" href="/images/albumIcon.png">
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>This is just to test the web hosting through GitHub.</p>
+
+    <div id="navbar">
+        <nav class="navCont">
+            <a href="#home">Home</a>
+            <a href="#credits">Credits</a>
+            <a href="#listen">Listen</a>
+        </nav>
+    </div>
+
+    <main id="home">
+        <div class="intro-section flex-row">
+            <div class="img-cont">
+                <img src="images/adamPortrait.png" alt="Adam Avery's Picture">
+            </div>
+            <div class="vertical-spread">
+                <h1>Adam Avery</h1>
+                <div class="flex-row">
+                    <h2>F</h2>
+                    <h2>F</h2>
+                    <h2>contact@adamaverymusic.com</h2>
+                </div>
+                <p>Adam is an award-winning, ASCAP songwriter who has a knack for crafting strong melodies with
+                    infectious hooks. He earned his first cut in 2012 when his song Redefined, was recorded by Chicago
+                    based band, Daniel’s Window. Adam lives with his wife and four children in the Green Mountains of
+                    Burlington, Vermont.</p>
+            </div>
+        </div>
+    </main>
+
+    <main id="credits">
+        <h1>Credits Section</h1>
+    </main>
+
+    <main id="listen">
+        <h1>Listen Section</h1>
+    </main>
+
+    <!-- JAVASCRIPT LINKS -->
+
+    <!-- Scrolling Functionality -->
+    <script src="javascript/nav.js"></script>
+
+    <!-- Loading Mobile Pages
+    <script type="text/javascript">
+        //Runs when page is loaded
+        if (screen.width <= 1200) {
+            document.location = "index.html";
+        }
+
+        //Runs when page is loaded
+        window.onresize = function (event) {
+            if (screen.width <= 1200) {
+                document.location = "index.html";
+            }
+        };
+    </script>-->
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- Enabling all tooltips in this document -->
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
 </body>
+
 </html>
