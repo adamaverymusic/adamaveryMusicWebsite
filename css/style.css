@@ -28,10 +28,6 @@ body {
 	line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
-}
-
 blockquote, q {
 	quotes: none;
 }
@@ -58,6 +54,11 @@ html{
 body{
     background: rgb(24, 24, 24) !important;
     color: #fff !important;
+}
+
+.master-width{
+    width: 60%;
+    margin: 0 auto;
 }
 
 a:hover {
@@ -93,6 +94,36 @@ a:hover {
     transition: 0.2s;
 }
 
+.header1{
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-size: 2.6em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sm-hr{
+    border: solid 1px white;
+    width: 125px;
+}
+
+.list-cont{
+    width: 90%;
+    margin: 0 auto;
+}
+
+ul{
+    text-align: left;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 1.6em;
+    line-height: 30px;
+}
+
+ul li{
+    padding: 12px 0 12px 15px;
+}
+
 .flex-row{
     display: flex;
     flex-direction: row;
@@ -102,6 +133,12 @@ a:hover {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+}
+
+.align-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .vertical-spread{
@@ -119,8 +156,9 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(14, 14, 14, 1);
-	height: 55px;
+    background: rgba(14, 14, 14, 1);
+    box-shadow: #0e0e0e 0px 0px 10px;
+	height: 50px;
 	margin: 0 auto;
 	width: 100%;
 	position: fixed;
@@ -159,16 +197,15 @@ nav a:hover {
 
 #home{
     font-family: 'Quicksand', sans-serif;
-    width: 60%;
-    margin: 0 auto;
-    padding: 55px 0 0 0;
+    height: 100vh;
+    padding: 50px 0 0px 0;
 }
 
 .intro-section{
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 100px 0 0 0;
+    padding: 100px 0 25px 0;
 }
 
 .intro-section .vertical-spread{
@@ -194,13 +231,13 @@ nav a:hover {
 
 .intro-section p{
     margin: 10px 0 0 0;
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 32px;
 }
 
 .intro-section .img-cont{
-    width: 22%;
+    width: 23%;
     margin: 0 45px 0 0;
     position: relative;
     display: block;
@@ -246,12 +283,15 @@ nav a:hover {
     display: block;
     object-fit: cover;
     width: 100%;
-    border-radius: 10px;
-    transition: 0.2s ease;
+    height: 100%;
+    border-radius: 0px;
+    transition: transform 0.5s;
 }
 
 .img-row-cont:hover img{
-    transition: 0.2s ease;
+    transform: scale(1.05);
+    transform-origin: 50% 50%;
+    transition: transform 0.5s;
 }
 
 .img-overlay{
@@ -268,13 +308,13 @@ nav a:hover {
     bottom: 0;
     left: 0;
     opacity: 0;
-    border-radius: 10px;
-    transition: 0.2s ease;
+    border-radius: 0px;
+    transition: 0.1s ease;
 }
 
 .img-overlay:hover{
     opacity: 1;
-    transition: 0.2s ease;
+    transition: 0.1s ease;
 }
 
 #big-play-button{
@@ -287,50 +327,65 @@ nav a:hover {
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    border: 1.5px solid #8b8b8b;
-    transition: 0.05s ease;
+    border: 2px solid #8d8d8d;
+    transition: 0.025s ease;
 }
 
 #big-play-button:hover{
     width: 65px;
     height: 65px;
     border-color:#fff;
-    transition: 0.05s ease;
+    transition: 0.025s ease;
 }
 
 #big-play-button:active{
-    width: 58px;
-    height: 58px;
-    border-color:#686868;
-    transition: 0.05s ease;
+    width: 60px;
+    height: 60px;
+    border-color:#8d8d8d;
+    transition: 0.025s ease;
 }
 
 #big-play-button i{
     font-size: 1.6em;
-    padding: 0 0 0 3px;
+    padding: 1px 0 0 3px;
     margin: 0 auto;
     line-height: 0;
-    transition: 0.05s ease;
+    transition: 0.025s ease;
 }
 
 #big-play-button:hover i{
     font-size: 1.8em;
-    padding: 0 0 0 5px;
-    transition: 0.05s ease;
+    padding: 1px 0 0 4px;
+    transition: 0.025s ease;
 }
 
 #big-play-button:active i{
-    font-size: 1.5em;
-    color: #b3b3b3;
-    padding: 0 0 0 3px;
-    transition: 0.05s ease;
+    font-size: 1.6em;
+    color: #8d8d8d;
+    padding: 1px 0 0 3px;
+    transition: 0.025s ease;
 }
 
 /* CREDITS SPECIFIC CLASSES */
 
 #credits{
-    height: 100vh;
+    padding: 100px 0;
     background: rgb(32, 32, 32);
+    text-align: center;
+}
+
+#credits iframe{
+    margin: 50px 0;
+    border-radius: 15px;
+    box-shadow: #000000 0px 0px 10px;
+    transition: 0.3s;
+}
+
+#credits iframe:hover{
+    margin: 50px 0;
+    border-radius: 15px;
+    box-shadow: #000000 0px 0px 20px;
+    transition: 0.3s;
 }
 
 /* CATALOGUE SPECIFIC CLASSES */
