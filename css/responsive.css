@@ -1,0 +1,75 @@
+/* Responsive for smaller desktop and laptop screens */
+
+@media only screen and (max-width: 1600px){
+    /* GENERAL */
+        
+    .master-width{
+        width: 70%;
+    }
+
+    .sm-hr{
+        width: 10%;
+    }
+
+    /* INTRO/HOME */
+    
+    .intro-section .img-cont{
+        width: 23%;
+    }
+
+    .intro-section p{
+        font-size: 1.2em;
+    }
+
+    /* CREDITS */
+
+    .list-cont{
+        width: 95%;
+    }
+
+    .list-cont li{
+        font-size: 0.9em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #credits iframe{
+        margin: 35px 0 60px 0;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    /* GENERAL */
+        
+    .master-width{
+        width: 70%;
+    }
+
+    /* INTRO/HOME */
+
+    .intro-section .img-cont{
+        width: 28%;
+    }
+
+    .intro-section p{
+        font-size: 1.2em;
+    }   
+
+    /* CREDITS */
+
+    .list-cont{
+        width: 95%;
+    }
+
+    .list-cont li{
+        font-size: 0.9em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #credits iframe{
+        margin: 35px 0 60px 0;
+        height: 350px;
+    }
+}
