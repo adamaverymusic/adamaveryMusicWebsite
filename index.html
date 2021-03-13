@@ -30,6 +30,7 @@
 </head>
 
 <body>
+    <div class="audioPlayer"></div>
 
     <div id="navbar">
         <nav class="navCont">
@@ -169,14 +170,21 @@
         </div>
     </main>
 
-    <main id="listen">
-        <h1>Listen Section</h1>
+    <main id="listen" class="master-width">
+        <h1 class="header1">Catalogue</h1>
+        <hr class="sm-hr">
+        <br>
+
+        <div class="catalogue-cont">
+            <div class="song-item"></div>
+        </div>
     </main>
 
     <!-- JAVASCRIPT LINKS -->
 
-    <!-- Scrolling Functionality -->
-    <script src="javascript/nav.js"></script>
+    <!-- Custom JS -->
+    <script src="javascript/Nav.js"></script>
+    <script type="modules" src="modules/App.js" crossorigin="use-credentials"></script>
 
     <!-- Loading Mobile Pages
     <script type="text/javascript">
