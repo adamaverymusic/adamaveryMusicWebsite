@@ -66,11 +66,14 @@ a:hover {
 }
 
 .text-link{
-    color: #fff;
+    color: #ffae51;
+    transition: 0.1s;
 }
 
 .text-link:hover{
-    color: #ffae52;
+    text-decoration: underline !important;
+    color: #b37025;
+    transition: 0.1s;
 }
 
 .italic{
@@ -282,22 +285,31 @@ nav a:hover {
     display: block;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0);
     margin: 0;
     padding: 0;
+
+    transition: 0.4s;
+}
+
+.img-row-cont:hover {
+    border: solid 2px rgba(255, 255, 255, 0.25);
+    transition: 0.4s;
 }
 
 .img-row-cont img{
     display: block;
     object-fit: cover;
+    border-radius: 10px;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    transition: 0.25s;
+    transition: 0.5s;
 }
 
 .img-row-cont:hover img{
-    transform-origin: 50% 50%;
-    transition: 0.25s;
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 
 .img-overlay{
@@ -335,7 +347,8 @@ nav a:hover {
     border-radius: 100%;
     border: 2px solid #8d8d8d;
     background: rgba(17, 17, 17, 0.815);
-    transition: 0.025s ease;
+
+    transition: 0.125s;
 }
 
 #big-play-button:hover{
@@ -343,14 +356,14 @@ nav a:hover {
     height: 65px;
     border-color:#fff;
     background: rgba(0, 0, 0, 0.822);
-    transition: 0.025s ease;
+    transition: 0.1s;
 }
 
 #big-play-button:active{
     width: 60px;
     height: 60px;
     border-color:#8d8d8d;
-    transition: 0.025s ease;
+    transition: 0.05s;
 }
 
 #big-play-button i{
@@ -358,20 +371,20 @@ nav a:hover {
     padding: 1px 0 0 3px;
     margin: 0 auto;
     line-height: 0;
-    transition: 0.025s ease;
+    transition: 0.125s;
 }
 
 #big-play-button:hover i{
     font-size: 1.6em;
     padding: 1px 0 0 4px;
-    transition: 0.025s ease;
+    transition: 0.1s;
 }
 
 #big-play-button:active i{
     font-size: 1.4em;
     color: #8d8d8d;
     padding: 1px 0 0 3px;
-    transition: 0.025s ease;
+    transition: 0.05s;
 }
 
 /* CREDITS SPECIFIC CLASSES */
