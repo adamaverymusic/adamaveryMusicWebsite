@@ -67,9 +67,9 @@
                 <div class="img-row-cont">
                     <img src="images/doingThat.png" alt="Tell Me Cover">
                     <div class="img-overlay">
-                        <div id="big-play-button">
+                        <button id="big-play-button">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <h5>Pop</h5>
@@ -78,9 +78,9 @@
                 <div class="img-row-cont">
                     <img src="images/comingHome.png" alt="Doing That Cover">
                     <div class="img-overlay">
-                        <div id="big-play-button">
+                        <button id="big-play-button">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <h5>Country</h5>
@@ -89,9 +89,9 @@
                 <div class="img-row-cont">
                     <img src="images/doingThat.png" alt="Coming Home Cover">
                     <div class="img-overlay">
-                        <div id="big-play-button">
+                        <button id="big-play-button">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <h5>Rock</h5>
@@ -100,9 +100,9 @@
                 <div class="img-row-cont">
                     <img src="images/comingHome.png" alt="Don't Worry About Me Cover">
                     <div class="img-overlay">
-                        <div id="big-play-button">
+                        <button id="big-play-button">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <h5>R&B</h5>
@@ -175,21 +175,45 @@
         </div>
     </main>
 
-    <div class="track-slider-cont">
-        <input class="track-slider" id="timeRange" type="range" min="1" max="500" value="40">
+    <div class="slider-cont" id="slider-cont">
+        <div class="slider" id="slider">
+
+        </div>
     </div>
 
     <div class="audio-player">
-        <div class="track-info"></div>
-        <div class="controller"></div>
+        <div class="track-info">
+            <img src="images/comingHome.png" alt="Album Cover Image">
+            <div>
+                <h5>Coming Home</h5>
+                <h6>Adam Avery, Other Person, Other Person, Other Person</h6>
+            </div>
+        </div>
+        <div class="controller">
+            <button id="big-play-button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="skip">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="skip">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
         <div class="volume">
-            <div class="slider-cont">
-                <input class="slider" id="timeRange" type="range" min="1" max="500" value="40">
+            <i class="fas fa-volume-down"></i>
+            <div class="slider-cont" id="slider-cont">
+                <div class="slider" id="slider">
+
+                </div>
             </div>
         </div>
     </div>
 
     <!-- JAVASCRIPT LINKS -->
+
+    <!-- Audio Player App -->
+    <script type="module" src="javascript/AudioApp.js"></script>
 
     <!-- Scrolling Functionality -->
     <script src="javascript/nav.js"></script>
