@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:900|Roboto:900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <style>
@@ -188,8 +189,13 @@
 
     <main id="catalogue" class="catalogue">
         <div class="master-width">
-            <h1 class="header1">Discography</h1>
-            <hr class="sm-hr">
+            <div class="discographyTextCont">
+                <i class="fas fa-compact-disc"></i>
+                <h1 class="header1">Discography</h1>
+            </div>
+
+            <br>
+            <br>
             <br>
             <br>
 
@@ -199,10 +205,10 @@
                         <button id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
-                        <h6>Song</h6>
+                        <h6><strong>Song</strong></h6>
                     </div>
-                    <h6 class="writers">Writers</h6>
-                    <h6 class="artists">Artists</h6>
+                    <h6 class="writers"><strong>Writers</strong></h6>
+                    <h6 class="artists"><strong>Artists</strong></h6>
                     <i class="far fa-clock"></i>
                 </div>
             </div>
@@ -352,45 +358,48 @@
         </div>
     </main>
 
-    <div class="slider-cont" id="slider-cont">
-        <div class="slider" id="slider">
-
-        </div>
-    </div>
-
-    <div class="audio-player">
-        <div class="track-info">
-            <img src="images/comingHome.png" alt="Album Cover Image">
-            <div>
-                <h5>Coming Home</h5>
-                <h6>Adam Avery, Other Person, Other Person, Other Person</h6>
+    <main class="master-audio-cont">
+        <div class="audio-progress-cont" id="audio-progress-cont">
+            <div class="audio-progress" id="audio-progress">
+    
             </div>
         </div>
+    
+        <div class="audio-player">
+            <audio id="audio" src="audio/comingHome_short.mp3"></audio>
+            <div class="track-info">
+                <div>
+                    <h5 class="songTitle">Coming Home</h5>
+                    <h6 class="songWriters">Adam Avery, Other Person, Other Person, Other Person</h6>
+                </div>
+            </div>
+            <div class="volume-cont">
+                <i class="fas fa-volume-down"></i>
+                <div class="volume-progress-cont" id="volume-progress-cont">
+                    <div class="volume-progress" id="volume-progress">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
         <div class="controller">
             <button id="play-button">
                 <i class="fas fa-play"></i>
             </button>
-            <button id="skip">
+            <button class="skip" id="prev">
                 <i class="fas fa-backward"></i>
             </button>
-            <button id="skip">
+            <button class="skip" id="next">
                 <i class="fas fa-forward"></i>
             </button>
         </div>
-        <div class="volume">
-            <i class="fas fa-volume-down"></i>
-            <div class="slider-cont" id="slider-cont">
-                <div class="slider" id="slider">
-
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <!-- JAVASCRIPT LINKS -->
 
-    <!-- Audio Player App -->
-    <script type="module" src="javascript/AudioApp.js"></script>
+    <!-- Audio Player -->
+    <script src="javascript/audioPlayer.js"></script>
 
     <!-- Scrolling Functionality -->
     <script src="javascript/nav.js"></script>

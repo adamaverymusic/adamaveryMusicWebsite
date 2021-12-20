@@ -105,13 +105,13 @@ a:hover {
     color: #fff;
     font-size: 2.6em;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     text-align: center;
 }
 
 .sm-hr {
-    background: #fff;
-    border: solid 1px white;
+    background: #7a7a7a;
+    border: solid 2px #7a7a7a;
     width: 125px;
 }
 
@@ -355,7 +355,7 @@ nav a:hover {
 }
 
 #play-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-color: #fff;
     transition: 0.025s ease;
 }
@@ -389,6 +389,7 @@ nav a:hover {
     padding: 100px 0;
     background: #303030;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 #credits iframe {
@@ -406,11 +407,46 @@ nav a:hover {
 /* CATALOGUE SPECIFIC CLASSES */
 
 #catalogue {
-    height: 110vh;
     padding: 100px 0;
+    margin: 0 0 150px 0;
+}
+
+.discographyTextCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.discographyTextCont h1 {
+    font-size: 3.4em;
+}
+
+.discographyTextCont i {
+    color: #ffa42d;
+    margin: 0 15px 0 0;
+    font-size: 4em;
+
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.discographyTextCont .sm-hr {
+    width: 100%;
 }
 
 .catalogue-key-cont {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
     height: auto !important;
     border: none !important;
 }
@@ -442,8 +478,6 @@ nav a:hover {
     max-height: 60vh;
     overflow-y: scroll;
     box-sizing: content-box;
-
-    background: none;
     border-top: solid 2px #fff;
     border-bottom: solid 2px #fff;
 }
@@ -465,12 +499,12 @@ nav a:hover {
 
 .playlist::-webkit-scrollbar-track-piece:end {
     background: transparent;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .playlist::-webkit-scrollbar-track-piece:start {
     background: transparent;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .track {
@@ -499,6 +533,7 @@ nav a:hover {
 
 .track #play-button:hover {
     border: 3px solid #ffffff;
+    transform: translate();
 }
 
 .track #play-button:active {
@@ -527,8 +562,15 @@ nav a:hover {
 
 /* MUSIC PLAYER SPECIFIC CLASSES */
 
-.audio-player {
+.master-audio-cont {
     position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+}
+
+.audio-player {
+    position: relative;
     bottom: 0;
 
     font-family: 'Raleway', snas-serif;
@@ -540,11 +582,11 @@ nav a:hover {
     align-items: center;
 
     width: 100%;
-    height: 110px;
-    padding: 10px;
+    height: 100%;
+    padding: 5px;
 }
 
-.slider-cont {
+.audio-progress-cont {
     position: fixed;
     bottom: 110px;
     z-index: 1;
@@ -554,35 +596,54 @@ nav a:hover {
     background: #fff;
 }
 
-.slider {
+.audio-progress {
     width: 30%;
     height: 100%;
     background: #ffa42d;
 }
 
+.volume-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .volume {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     width: 200px;
 
     margin: 0 15px 0 0;
 }
 
-.volume .slider-cont {
+.volume-progress-cont {
     position: relative;
     bottom: auto;
     top: auto;
-    margin: 0 0 0 10%;
+
+    width: 175px;
+    height: 4px;
+    background: #fff;
+
+    margin: 0 20px 0 10%;
     border-radius: 50px;
     overflow: hidden;
+}
+
+.volume-progress {
+    width: 50%;
+    height: 4px;
+    background: #ffa42d;
 }
 
 .track-info {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+
     height: 75%;
 }
 
@@ -597,23 +658,29 @@ nav a:hover {
 }
 
 .track-info h5 {
-    font-size: 1em;
-    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
     letter-spacing: 0.5px;
     line-height: 20px;
 }
 
 .track-info h6 {
-    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9em;
     font-weight: 100;
     letter-spacing: 0.5px;
-    line-height: 10px;
+    line-height: 15px;
 }
 
 .controller {
     position: absolute;
-    left: 50vw;
-    right: 50vw;
+    bottom: 0;
+    transform: translate(calc(50vw - 50%));
+    z-index: 1;
+
+    width: 200px;
+    height: 100%;
 
     display: flex;
     justify-content: center;
@@ -633,31 +700,31 @@ nav a:hover {
     color: #000;
 }
 
-#skip {
+.skip {
     font-size: 1.1em;
     background: none;
-    outline: none;
+    outline: none !important;
     border: none;
     color: #a7a7a7;
 
-    margin: 0 60px;
+    margin: 0 50px;
 
     transition: 0.05s;
 }
 
-#skip:hover {
+.skip:hover {
     color: #fff;
 
     transition: 0.05s;
 }
 
-#skip:active {
+.skip:active {
     color: #c3c3c3;
 
     transition: 0.05s;
 }
 
-#skip div {
+.skip div {
     height: 100%;
     width: 2px;
     background: #fff;
