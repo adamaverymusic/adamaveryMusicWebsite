@@ -1,8 +1,8 @@
-playBtn = document.querySelector('#play-button');
-
+const audioParent = document.querySelector('.master-audio-cont');
 const audioPlayer = document.querySelector('.audio-player');
 const audioProgressCont = document.querySelector('.audio-progress-cont');
 const audioProgress = document.querySelector('.audio-progress');
+const mainPlayBtn = document.querySelector('.controller').querySelector('#play-button');
 const skip = document.querySelector('#skip');
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
@@ -42,9 +42,51 @@ let songIndex = 3;
 // Load song info on the DOM first
 loadSong(songs[songIndex]);
 
-// Update the song's details
+// Music Functions
+function playBtnPress(playBtn) {
+    const isPlaying = audioParent.classList.contains('playing');
+
+    if (isPlaying) {
+        pauseSong(playBtn);
+    }
+    else {
+        playSong(playBtn);
+    }
+
+    resetAllPlayBtns();
+}
+
 function loadSong(song) {
     title.innerText = song.songTitle;
     writers.innerText = song.songWriters;
     audio.src = "../audio/" + song.songFile + ".mp3";
+}
+
+// Clear all play buttons when a play button is pressed
+function resetAllPlayBtns() {
+    var playBtns = document.querySelectorAll('#play-button');
+
+    for (i = 0; i < playBtns.length; i++) {
+        playBtns[i].classList.remove('playing');
+        playBtns[i].querySelector('i.fas').classList.remove('fa-pause');
+        playBtns[i].querySelector('i.fas').classList.add('fa-play');
+    }
+}
+
+function playSong(playBtn) {
+    // Update audio-player and the clicked button
+    audioParent.classList.add('playing');
+    mainPlayBtn.classList.add('playing');
+    playBtn.parentElement.classList.add('playing');
+    playBtn.querySelector('i.fas').classList.remove('fa-play');
+    playBtn.querySelector('i.fas').classList.add('fa-pause');
+}
+
+function pauseSong(playBtn) {
+    // Update audio-player button and the clicked button
+    audioParent.classList.remove('playing');
+    mainPlayBtn.classList.remove('playing');
+    playBtn.parentElement.classList.remove('playing');
+    playBtn.querySelector('i.fas').classList.remove('fa-pause');
+    playBtn.querySelector('i.fas').classList.add('fa-play');
 }

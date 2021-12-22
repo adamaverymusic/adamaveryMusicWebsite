@@ -383,6 +383,11 @@ nav a:hover {
     transition: 0.025s ease;
 }
 
+.playing #play-button i {
+    transform: scale(0.9, 1.1);
+    padding: 0 0 0 0;
+}
+
 /* CREDITS SPECIFIC CLASSES */
 
 #credits {
