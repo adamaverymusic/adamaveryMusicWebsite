@@ -1,3 +1,4 @@
+const audioPlaylist = document.querySelector('.playlist');
 const audioParent = document.querySelector('.master-audio-cont');
 const audioPlayer = document.querySelector('.audio-player');
 const audioProgressCont = document.querySelector('.audio-progress-cont');
@@ -52,8 +53,6 @@ function playBtnPress(playBtn) {
     else {
         playSong(playBtn);
     }
-
-    resetAllPlayBtns();
 }
 
 function loadSong(song) {
@@ -75,6 +74,7 @@ function resetAllPlayBtns() {
 
 function playSong(playBtn) {
     // Update audio-player and the clicked button
+    audioPlaylist.classList.add('playing');
     audioParent.classList.add('playing');
     mainPlayBtn.classList.add('playing');
     playBtn.parentElement.classList.add('playing');
@@ -83,7 +83,10 @@ function playSong(playBtn) {
 }
 
 function pauseSong(playBtn) {
+    resetAllPlayBtns();
+
     // Update audio-player button and the clicked button
+    audioPlaylist.classList.remove('playing');
     audioParent.classList.remove('playing');
     mainPlayBtn.classList.remove('playing');
     playBtn.parentElement.classList.remove('playing');
