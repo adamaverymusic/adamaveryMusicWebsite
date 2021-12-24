@@ -93,3 +93,12 @@ function pauseSong(playBtn) {
     playBtn.querySelector('i.fas').classList.remove('fa-pause');
     playBtn.querySelector('i.fas').classList.add('fa-play');
 }
+
+// Fixing IMG heights in the home section
+window.onresize = function updateAlbumImages() {
+    var albums = document.querySelectorAll('.img-row-cont');
+
+    for (i = 0; i < albums.length; i++) {
+        albums[i].style.height = getComputedStyle(albums[i]).width;
+    }
+}
