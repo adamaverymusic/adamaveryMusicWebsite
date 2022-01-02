@@ -411,7 +411,8 @@ nav a:hover {
 }
 
 .playing #play-button i {
-    transform: scale(0.9, 1.1);
+    color: lime !important;
+    transform: scale(0.5, 1.1);
     padding: 0 0 0 0;
 }
 

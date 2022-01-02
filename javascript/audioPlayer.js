@@ -15,7 +15,6 @@ const volProgress = document.querySelector('.volume-progress');
 var activePlayBtn;
 
 class Song {
-
     constructor(songTitle, songFile, songWriters) {
         this.songTitle = songTitle;
         this.songWriters = songWriters;
@@ -27,11 +26,11 @@ class Song {
 
 const songs = [
     // Short Versions
-    new Song("Coming Home (Clip)", "comingHome_short.mp3", "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Doing That (Clip)", "doingThat_short.mp3", "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Tell Me (Clip)", "tellMe_short.mp3", "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Don't Worry (Clip)", "dontWorry_short.mp3", "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("The Languishing (Clip)", "theLanguishing_short.mp3", "Adam Avery, Other Person, Other Person, Other Person")
+    new Song("Doing That (Clip)", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Don't Worry (Clip)", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Tell Me (Clip)", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("The Languishing (Clip)", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person")
 
     // Full Songs
     // EX: new Song("Name", "Writers", "song.mp3"),
@@ -74,14 +73,12 @@ function playBtnPress(playBtn, newSongIndex) {
     else {
         playSong(playBtn, newSongIndex);
     }
-
-    playButtonFilter(playBtn);
 }
 
 function loadSong(song) {
     title.innerText = song.songTitle;
     writers.innerText = song.songWriters;
-    audio.src = "../audio/" + song.songFile + ".mp3";
+    audio.src = 'audio/' + song.songFile + '.mp3';
 
     activeSong = song;
 }
@@ -91,22 +88,33 @@ function resetAllPlayBtns() {
     var playBtns = document.querySelectorAll('#play-button');
 
     for (i = 0; i < playBtns.length; i++) {
-        playBtns[i].classList.remove('playing');
+        playBtns[i].parentElement.classList.remove('playing');
         playBtns[i].querySelector('i.fas').classList.remove('fa-pause');
         playBtns[i].querySelector('i.fas').classList.add('fa-play');
     }
 }
 
 function playSong(playBtn, newSongIndex) {
-
+    resetAllPlayBtns();
 
     // Update audio-player and the clicked button
     audioPlaylist.classList.add('playing');
     audioParent.classList.add('playing');
+
+    // Don't update activePlayBtn or song index if user selected the mainPlayBtn
+    if (playBtn != mainPlayBtn) {
+        songIndex = newSongIndex;
+        activePlayBtn = playBtn;
+        // Only load a new song when a song is being played
+        loadSong(songs[songIndex]);
+    }
+
     mainPlayBtn.classList.add('playing');
-    playBtn.parentElement.classList.add('playing');
-    playBtn.querySelector('i.fas').classList.remove('fa-play');
-    playBtn.querySelector('i.fas').classList.add('fa-pause');
+    mainPlayBtn.querySelector('i.fas').classList.remove('fa-play');
+    mainPlayBtn.querySelector('i.fas').classList.add('fa-pause');
+    activePlayBtn.parentElement.classList.add('playing');
+    activePlayBtn.querySelector('i.fas').classList.remove('fa-play');
+    activePlayBtn.querySelector('i.fas').classList.add('fa-pause');
 }
 
 function pauseSong(playBtn) {
@@ -115,14 +123,22 @@ function pauseSong(playBtn) {
     // Update audio-player button and the clicked button
     audioPlaylist.classList.remove('playing');
     audioParent.classList.remove('playing');
+
+    // Don't update activePlayBtn if user selected the mainPlayBtn
+    if (playBtn != mainPlayBtn) {
+        activePlayBtn = playBtn;
+    }
+
     mainPlayBtn.classList.remove('playing');
+    mainPlayBtn.querySelector('i.fas').classList.remove('fa-pause');
+    mainPlayBtn.querySelector('i.fas').classList.add('fa-play');
     playBtn.parentElement.classList.remove('playing');
     playBtn.querySelector('i.fas').classList.remove('fa-pause');
     playBtn.querySelector('i.fas').classList.add('fa-play');
 }
 
-// This only saves buttons that are NOT the mainPlayBtn as the activePlayBtn
-function playButtonFilter (pressedBtn) {
+/*/ This only saves buttons that are NOT the mainPlayBtn as the activePlayBtn
+function playButtonFilter(pressedBtn) {
     if (pressedBtn == mainPlayBtn) {
         // Main play button was pressed so we do nothing
         console.log("MAIN PLAY BUTTON WAS PRESSED, DO NOTHING");
@@ -130,4 +146,4 @@ function playButtonFilter (pressedBtn) {
     else {
         activePlayBtn = pressedBtn;
     }
-}
+}*/
