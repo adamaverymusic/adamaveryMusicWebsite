@@ -28,6 +28,32 @@
     </style>
 
     <link rel="icon" href="/images/albumIcon.png">
+
+    <!-- JAVASCRIPT LINKS -->
+
+    <!-- Scrolling Functionality -->
+    <script src="javascript/nav.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- Enabling all tooltips in this document -->
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </head>
 
 <body>
@@ -99,7 +125,7 @@
             </div>
             <div class="img-row-item">
                 <div class="img-row-cont">
-                    <img src="images/spin.jpg" alt="Don't Worry About Me Cover">
+                    <img src="images/dontWorry.jpg" alt="Don't Worry About Me Cover">
                     <div class="img-overlay">
                         <button onclick="playBtnPress(this)" id="play-button">
                             <i class="fas fa-play"></i>
@@ -217,7 +243,7 @@
                 
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 5)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -228,7 +254,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 6)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -239,7 +265,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 7)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -250,7 +276,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 8)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -261,7 +287,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 9)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -272,7 +298,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this)" id="play-button">
+                        <button onclick="playBtnPress(this, 10)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -312,7 +338,7 @@
         </div>
     
         <div class="controller">
-            <button onclick="playBtnPress(this)" id="play-button">
+            <button onclick="playBtnPress(this)" class="main-play" id="play-button">
                 <i class="fas fa-play"></i>
             </button>
             <button class="skip" id="prev">
@@ -324,34 +350,9 @@
         </div>
     </main>
 
-    <!-- JAVASCRIPT LINKS -->
-
+    <!-- THIS NEEDS TO BE AT THE BOTTOM FOR QUERY SELECTOR TO WORK -->
     <!-- Audio Player -->
     <script src="javascript/audioPlayer.js"></script>
-
-    <!-- Scrolling Functionality -->
-    <script src="javascript/nav.js"></script>
-
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Bootstrap Javascript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-    <!-- Enabling all tooltips in this document -->
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 
 </body>
 
