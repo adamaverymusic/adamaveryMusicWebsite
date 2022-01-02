@@ -58,6 +58,12 @@ loadSong(songs[songIndex]);
 function playBtnPress(playBtn, newSongIndex) {
     const isPlaying = audioParent.classList.contains('playing');
 
+    // If this is the play button we need to update the song index
+    // to the last activePlayBtn song index
+    if (playBtn == mainPlayBtn) {
+        newSongIndex = songIndex;
+    }
+
     if (isPlaying) {
         // If music is already playing, and we select the same song
         // then we can pause the music
