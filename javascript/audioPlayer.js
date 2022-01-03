@@ -12,6 +12,7 @@ const title = document.querySelector('.songTitle');
 const writers = document.querySelector('.songWriters');
 const volProgressCont = document.querySelector('.volume-progress-cont');
 const volProgress = document.querySelector('.volume-progress');
+
 var activePlayBtn;
 
 class Song {
@@ -26,14 +27,19 @@ class Song {
 
 const songs = [
     // Short Versions
-    new Song("Doing That (Clip)", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Don't Worry (Clip)", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
     new Song("Tell Me (Clip)", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("The Languishing (Clip)", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person")
+    new Song("The Languishing (Clip)", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Doing That (Clip)", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Don't Worry (Clip)", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
 
     // Full Songs
-    // EX: new Song("Name", "Writers", "song.mp3"),
+    new Song("Tell Me", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("The Languishing", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Doing That", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Don't Worry", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Coming Home", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Coming Home", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
 ];
 
 // Song Count (keep track)
@@ -91,7 +97,7 @@ function loadSong(song) {
 
 // Clear all play buttons when a play button is pressed
 function resetAllPlayBtns() {
-    var playBtns = document.querySelectorAll('#play-button');
+    const playBtns = document.querySelectorAll('#play-button');
 
     for (i = 0; i < playBtns.length; i++) {
         playBtns[i].parentElement.classList.remove('playing');
@@ -121,6 +127,9 @@ function playSong(playBtn, newSongIndex) {
     activePlayBtn.parentElement.classList.add('playing');
     activePlayBtn.querySelector('i.fas').classList.remove('fa-play');
     activePlayBtn.querySelector('i.fas').classList.add('fa-pause');
+
+    // Play the audio lastly
+    audio.play();
 }
 
 function pauseSong(playBtn) {
@@ -138,18 +147,44 @@ function pauseSong(playBtn) {
     mainPlayBtn.classList.remove('playing');
     mainPlayBtn.querySelector('i.fas').classList.remove('fa-pause');
     mainPlayBtn.querySelector('i.fas').classList.add('fa-play');
-    playBtn.parentElement.classList.remove('playing');
-    playBtn.querySelector('i.fas').classList.remove('fa-pause');
-    playBtn.querySelector('i.fas').classList.add('fa-play');
+    activePlayBtn.parentElement.classList.remove('playing');
+    activePlayBtn.querySelector('i.fas').classList.remove('fa-pause');
+    activePlayBtn.querySelector('i.fas').classList.add('fa-play');
+
+    audio.pause();
 }
 
-/*/ This only saves buttons that are NOT the mainPlayBtn as the activePlayBtn
-function playButtonFilter(pressedBtn) {
-    if (pressedBtn == mainPlayBtn) {
-        // Main play button was pressed so we do nothing
-        console.log("MAIN PLAY BUTTON WAS PRESSED, DO NOTHING");
+function prevSong() {
+    // Find all the play buttons for actual songs (some don't belong to any track)
+    const buttonsInQue = document.querySelectorAll('.song-in-que');
+
+    songIndex--;
+    // Loop the que from last full song once zero is hit
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
     }
-    else {
-        activePlayBtn = pressedBtn;
+    // If a full version song is playing, don't allow skipping back into the
+    // sample clips. Instead, keep looping within the playlist of full songs
+    else if (songIndex + 1 > 4) {
+        if (songIndex < 5) {
+            songIndex = songs.length - 1;
+        }
     }
-}*/
+
+    newSongIndex = songIndex;
+    playSong(buttonsInQue[songIndex], songIndex);
+}
+
+function nextSong() {
+    // Find all the play buttons for actual songs (some don't belong to any track)
+    const buttonsInQue = document.querySelectorAll('.song-in-que');
+
+    songIndex++;
+    // When final song is skipped, restart the que with only full version songs
+    if (songIndex > songs.length - 1) {
+        songIndex = 5;
+    }
+
+    newSongIndex = songIndex;
+    playSong(buttonsInQue[songIndex], songIndex);
+}

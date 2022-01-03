@@ -92,9 +92,9 @@
         <div class="img-row">
             <div class="img-row-item">
                 <div class="img-row-cont">
-                    <img src="images/doingThat.png" alt="Tell Me Cover">
+                    <img src="images/tellMe.jpg" alt="Tell Me Cover">
                     <div class="img-overlay">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 0)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
@@ -103,9 +103,20 @@
             </div>
             <div class="img-row-item">
                 <div class="img-row-cont">
-                    <img src="images/comingHome.png" alt="Doing That Cover">
+                    <img src="images/languishing.jpg" alt="Languishing Cover">
                     <div class="img-overlay">
-                        <button onclick="playBtnPress(this, 1)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 1)" id="play-button">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                <h5>Americana</h5>
+            </div>
+            <div class="img-row-item">
+                <div class="img-row-cont">
+                    <img src="images/doingThat.png" alt="Tell Me Cover">
+                    <div class="img-overlay">
+                        <button class="song-in-que" onclick="playBtnPress(this, 2)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
@@ -114,20 +125,9 @@
             </div>
             <div class="img-row-item">
                 <div class="img-row-cont">
-                    <img src="images/studio.jpg" alt="Coming Home Cover">
+                    <img src="images/dontWorry.jpg" alt="Don't Worry Bout Me Cover">
                     <div class="img-overlay">
-                        <button onclick="playBtnPress(this, 2)" id="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                </div>
-                <h5>Rock</h5>
-            </div>
-            <div class="img-row-item">
-                <div class="img-row-cont">
-                    <img src="images/dontWorry.jpg" alt="Don't Worry About Me Cover">
-                    <div class="img-overlay">
-                        <button onclick="playBtnPress(this, 3)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 3)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
@@ -136,9 +136,9 @@
             </div>
             <div class="img-row-item">
                 <div class="img-row-cont">
-                    <img src="images/languishing.jpg" alt="Coming Home Cover">
+                    <img src="images/comingHome.png" alt="Doing That Cover">
                     <div class="img-overlay">
-                        <button onclick="playBtnPress(this, 4)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 4)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
@@ -160,9 +160,9 @@
                             href="https://www.nicotheowl.com/" class="text-link bold">Nico The Owl</a>
                         (Los Angeles, CA)
                     </li>
-                    <li><a target="_blank" href="https://www.discogs.com/artist/31654-Tim-Kellett"
-                            class="text-link bold">Tim Kellett</a>
-                        from the band, Simply Red (UK)</li>
+                    <li>GROW Records recording artist, <a target="_blank"
+                            href="https://open.spotify.com/artist/2PVHjhJWIKgb2yfBTmQerg?autoplay=true"
+                            class="text-link bold">Amanda Delara</a> (Norway)</li>
                     <li>German Songwriting Award Winner & triple-platinum songwriter, <a target="_blank"
                             href="https://concord.com/publishing-roster/basti-becks/" class="text-link bold">Basti
                             Becks</a> (Germany)</li>
@@ -173,13 +173,13 @@
                     <li>Gold certified artist, <a target="_blank" class="text-link bold"
                             href="https://open.spotify.com/artist/2GIKcsT0xfsxpYUZ5yX2tL">The Dark Tenor</a>
                         (Germany)</li>
-                    <li>GROW Records recording artist, <a target="_blank"
-                            href="https://open.spotify.com/artist/2PVHjhJWIKgb2yfBTmQerg?autoplay=true"
-                            class="text-link bold">Amanda Delara</a> (Norway)</li>
                     <li>Session player for Ed Sheeran, producer/songwriter, <a target="_blank"
                             href="https://www.nosheetmusic.tv/artists/anthony-goldsbrough-1"
                             class="text-link bold">Anthony Goldsbrough</a> (UK)
                     </li>
+                    <li><a target="_blank" href="https://www.rncm.ac.uk/people/tim-kellett/"
+                            class="text-link bold">Tim Kellett</a>
+                        from the band, Simply Red (UK)</li>
                     <li>Dante Leon (Canada), Karen Waldrup (Nashville, TN), Isaac French (Burlington, VT),
                         Francesca Blanchard (Burlington, VT), Christopher Hawthorn (Burlington, VT)</li>
                 </ul>
@@ -208,6 +208,7 @@
                     <li><strong class="bold">Finalist:</strong> Country category 2014 International Songwriting
                         Competition (29
                         Angels)</li>
+                    <li><strong class="bold">Winner:</strong> 2021 Broadjam 6-Pack Songwriting Contest</li>
                 </ul>
             </div>
         </div>
@@ -240,13 +241,24 @@
             </div>
 
             <div class="playlist">
-                
+
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 5)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
-                        <h6>Song Title</h6>
+                        <h6>Tell Me</h6>
+                    </div>
+                    <h6 class="writers">Adam Avery</h6>
+                    <h6 class="artists">Artists</h6>
+                    <h6 class="time">2:52</h6>
+                </div>
+                <div class="track">
+                    <div class="song">
+                        <button class="song-in-que" onclick="playBtnPress(this, 6)" id="play-button">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <h6>The Languishing</h6>
                     </div>
                     <h6 class="writers">Writers</h6>
                     <h6 class="artists">Artists</h6>
@@ -254,10 +266,10 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 7)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
-                        <h6>Song Title</h6>
+                        <h6>Doing That</h6>
                     </div>
                     <h6 class="writers">Writers</h6>
                     <h6 class="artists">Artists</h6>
@@ -265,10 +277,10 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 8)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
-                        <h6>Song Title</h6>
+                        <h6>Don't Worry 'Bout Me</h6>
                     </div>
                     <h6 class="writers">Writers</h6>
                     <h6 class="artists">Artists</h6>
@@ -276,10 +288,10 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 9)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
-                        <h6>Song Title</h6>
+                        <h6>Coming Home</h6>
                     </div>
                     <h6 class="writers">Writers</h6>
                     <h6 class="artists">Artists</h6>
@@ -287,18 +299,7 @@
                 </div>
                 <div class="track">
                     <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <h6>Song Title</h6>
-                    </div>
-                    <h6 class="writers">Writers</h6>
-                    <h6 class="artists">Artists</h6>
-                    <h6 class="time">2:52</h6>
-                </div>
-                <div class="track">
-                    <div class="song">
-                        <button onclick="playBtnPress(this, 0)" id="play-button">
+                        <button class="song-in-que" onclick="playBtnPress(this, 10)" id="play-button">
                             <i class="fas fa-play"></i>
                         </button>
                         <h6>Song Title</h6>
@@ -315,10 +316,10 @@
     <main class="master-audio-cont">
         <div class="audio-progress-cont" id="audio-progress-cont">
             <div class="audio-progress" id="audio-progress">
-    
+
             </div>
         </div>
-    
+
         <div class="audio-player">
             <audio id="audio" src="audio/comingHome_short.mp3"></audio>
             <div class="track-info">
@@ -331,20 +332,20 @@
                 <i class="fas fa-volume-down"></i>
                 <div class="volume-progress-cont" id="volume-progress-cont">
                     <div class="volume-progress" id="volume-progress">
-    
+
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="controller">
             <button onclick="playBtnPress(this, 0)" class="main-play" id="play-button">
                 <i class="fas fa-play"></i>
             </button>
-            <button class="skip" id="prev">
+            <button onclick="prevSong()" class="skip" id="prev">
                 <i class="fas fa-backward"></i>
             </button>
-            <button class="skip" id="next">
+            <button onclick="nextSong()" class="skip" id="next">
                 <i class="fas fa-forward"></i>
             </button>
         </div>
