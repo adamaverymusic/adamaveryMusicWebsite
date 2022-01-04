@@ -1,6 +1,7 @@
 const audioPlaylist = document.querySelector('.playlist');
 const audioParent = document.querySelector('.master-audio-cont');
 const audioPlayer = document.querySelector('.audio-player');
+const audioProgressHitbox = document.querySelector('.audio-progress-hitbox');
 const audioProgressCont = document.querySelector('.audio-progress-cont');
 const audioProgress = document.querySelector('.audio-progress');
 const mainPlayBtn = document.querySelector('.main-play');
@@ -23,8 +24,10 @@ class Song {
     }
 };
 
-// Songs
+audio.addEventListener('ended', nextSong);
+audioProgressHitbox.addEventListener('click', setProgress);
 
+// Songs
 const songs = [
     // Short Versions
     new Song("Tell Me (Clip)", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
@@ -188,3 +191,28 @@ function nextSong() {
     newSongIndex = songIndex;
     playSong(buttonsInQue[songIndex], songIndex);
 }
+
+function runTimeUpdate() {
+    updateTime();
+    setTimeout( function () {
+        runTimeUpdate();
+    }, 50)
+}
+
+function updateTime() {
+    const duration = audio.duration;
+    const currentTime = audio.currentTime;
+    const progressPercent = (currentTime / duration) * 100;
+    audioProgress.style.width = `${progressPercent}%`;
+    console.log("ur mom gay");
+}
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (clickX / width) * duration;
+}
+
+runTimeUpdate();

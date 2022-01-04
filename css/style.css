@@ -632,20 +632,42 @@ nav a:hover {
     padding: 5px;
 }
 
-.audio-progress-cont {
+.audio-progress-hitbox {
     position: fixed;
-    bottom: 90px;
+    bottom: 79px;
     z-index: 1;
 
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 25px;
+}
+
+.audio-progress-hitbox:hover {
+    cursor: pointer;
+}
+
+.audio-progress-cont {
     width: 100%;
     height: 4px;
     background: #fff;
+
+    transition: 0.12s;
+}
+
+.audio-progress-hitbox:hover .audio-progress-cont {
+    height: 8px;
+
+    transition: 0.12s;
 }
 
 .audio-progress {
-    width: 30%;
+    width: 0%;
     height: 100%;
-    background: #ffa42d;
+    background: hsl(34, 100%, 54%);
+
+    transition: 0.07s;
 }
 
 .volume-cont {
