@@ -1,4 +1,3 @@
-const audioPlaylist = document.querySelector('.playlist');
 const audioParent = document.querySelector('.master-audio-cont');
 const audioPlayer = document.querySelector('.audio-player');
 const audioProgressHitbox = document.querySelector('.audio-progress-hitbox');
@@ -11,10 +10,16 @@ const next = document.querySelector('#next');
 const audio = document.querySelector('#audio');
 const title = document.querySelector('.songTitle');
 const writers = document.querySelector('.songWriters');
+const volHitbox = document.querySelector('.volume-hitbox');
 const volProgressCont = document.querySelector('.volume-progress-cont');
 const volProgress = document.querySelector('.volume-progress');
 
-var activePlayBtn;
+var activePlayBtn = document.querySelectorAll('#play-button')[0];
+var draggingPlayer;
+var draggingVolume;
+
+// Song Count (keep track)
+let songIndex = 0;
 
 class Song {
     constructor(songTitle, songFile, songWriters) {
@@ -23,9 +28,6 @@ class Song {
         this.songFile = songFile;
     }
 };
-
-audio.addEventListener('ended', nextSong);
-audioProgressHitbox.addEventListener('click', setProgress);
 
 // Songs
 const songs = [
@@ -37,7 +39,7 @@ const songs = [
     new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
 
     // Full Songs
-    new Song("Tell Me", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Tell Me", 'tellMe', "Adam Avery, Other Person, Other Person, Other Person"),
     new Song("The Languishing", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person"),
     new Song("Doing That", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
     new Song("Don't Worry", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
@@ -45,8 +47,28 @@ const songs = [
     new Song("Coming Home", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
 ];
 
-// Song Count (keep track)
-let songIndex = 2;
+loadSong(songs[songIndex]);
+
+audio.addEventListener('ended', nextSong);
+
+// AUDIO PROGRESS EVENT LISTENERS
+audioProgressHitbox.addEventListener('click', setProgress);
+audioProgressHitbox.addEventListener('dragstart', function () {
+    draggingPlayer = true;
+});
+audioProgressHitbox.addEventListener('dragend', function () {
+    draggingPlayer = false;
+});
+
+
+// VOLUME EVENT LISTENERS
+volHitbox.addEventListener('click', setVolume);
+volHitbox.addEventListener('dragstart', function () {
+    draggingVolume = true;
+});
+volHitbox.addEventListener('dragend', function () {
+    draggingVolume = false;
+});
 
 // Fixing IMG heights in the home section
 window.onresize = updateAlbumImages();
@@ -56,12 +78,8 @@ function updateAlbumImages() {
 
     for (i = 0; i < albums.length; i++) {
         albums[i].style.height = getComputedStyle(albums[i]).width;
-        console.log("FIXED");
     }
 }
-
-// Load song info on the DOM first
-loadSong(songs[songIndex]);
 
 // Music Functions
 function playBtnPress(playBtn, newSongIndex) {
@@ -91,9 +109,12 @@ function playBtnPress(playBtn, newSongIndex) {
 }
 
 function loadSong(song) {
+    if (title.innerText != song.songTitle) {
+        audio.src = 'audio/' + song.songFile + '.mp3';
+    }
+
     title.innerText = song.songTitle;
     writers.innerText = song.songWriters;
-    audio.src = 'audio/' + song.songFile + '.mp3';
 
     activeSong = song;
 }
@@ -106,6 +127,12 @@ function resetAllPlayBtns() {
         playBtns[i].parentElement.classList.remove('playing');
         playBtns[i].querySelector('i.fas').classList.remove('fa-pause');
         playBtns[i].querySelector('i.fas').classList.add('fa-play');
+
+        // If this is a track in the playlist, then add the playing class
+        // to the parent cont to add styling to the text
+        if (playBtns[i].parentElement.classList.contains('song')) {
+            playBtns[i].parentElement.classList.remove('playing');
+        }
     }
 }
 
@@ -113,7 +140,6 @@ function playSong(playBtn, newSongIndex) {
     resetAllPlayBtns();
 
     // Update audio-player and the clicked button
-    audioPlaylist.classList.add('playing');
     audioParent.classList.add('playing');
 
     // Don't update activePlayBtn or song index if user selected the mainPlayBtn
@@ -128,6 +154,13 @@ function playSong(playBtn, newSongIndex) {
     mainPlayBtn.querySelector('i.fas').classList.remove('fa-play');
     mainPlayBtn.querySelector('i.fas').classList.add('fa-pause');
     activePlayBtn.parentElement.classList.add('playing');
+
+    // If this is a track in the playlist, then add the playing class
+    // to the parent cont to add styling to the text
+    if (playBtn.parentElement.classList.contains('song')) {
+        playBtn.parentElement.classList.add('playing');
+    }
+
     activePlayBtn.querySelector('i.fas').classList.remove('fa-play');
     activePlayBtn.querySelector('i.fas').classList.add('fa-pause');
 
@@ -139,7 +172,6 @@ function pauseSong(playBtn) {
     resetAllPlayBtns();
 
     // Update audio-player button and the clicked button
-    audioPlaylist.classList.remove('playing');
     audioParent.classList.remove('playing');
 
     // Don't update activePlayBtn if user selected the mainPlayBtn
@@ -194,7 +226,8 @@ function nextSong() {
 
 function runTimeUpdate() {
     updateTime();
-    setTimeout( function () {
+
+    setTimeout(function () {
         runTimeUpdate();
     }, 50)
 }
@@ -204,7 +237,6 @@ function updateTime() {
     const currentTime = audio.currentTime;
     const progressPercent = (currentTime / duration) * 100;
     audioProgress.style.width = `${progressPercent}%`;
-    console.log("ur mom gay");
 }
 
 function setProgress(e) {
@@ -213,6 +245,23 @@ function setProgress(e) {
     const duration = audio.duration;
 
     audio.currentTime = (clickX / width) * duration;
+}
+
+function updateVolume() {
+    const volPercent = (audio.volume / 1) * 100;
+    volProgress.style.width = `${volPercent}%`;
+}
+
+function setVolume(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+
+    newVol = clickX / width;
+    if (newVol > 0 && newVol < 1) {
+        audio.volume = newVol;
+    }
+
+    updateVolume();
 }
 
 runTimeUpdate();
