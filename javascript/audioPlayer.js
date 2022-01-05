@@ -32,19 +32,37 @@ class Song {
 // Songs
 const songs = [
     // Short Versions
-    new Song("Tell Me (Clip)", 'tellMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("The Languishing (Clip)", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Doing That (Clip)", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Don't Worry (Clip)", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Tell Me (Clip)", 'tellMe_short', "Adam Avery, Claire Ulanoff"),
+    new Song("The Languishing (Clip)", 'theLanguishing_short', "Adam Avery"),
+    new Song("Doing That (Clip)", 'doingThat_short', "Adam Avery, Claire Ulanoff"),
+    new Song("Dont Worry Bout Me (Clip)", 'dontWorryBoutMe_short', "Adam Avery, Christopher Hawthorn"),
+    new Song("Coming Home (Clip)", 'comingHome_short', "Adam Avery, Jeremy Conn"),
 
     // Full Songs
-    new Song("Tell Me", 'tellMe', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("The Languishing", 'theLanguishing_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Doing That", 'doingThat_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Don't Worry", 'dontWorryBoutMe_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Coming Home", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
-    new Song("Coming Home", 'comingHome_short', "Adam Avery, Other Person, Other Person, Other Person"),
+    new Song("Tell Me", 'Tell Me', "Adam Avery, Claire Ulanoff"),
+    new Song("The Languishing", 'The Languishing', "Adam Avery"),
+    new Song("Doing That", 'Doing That', "Adam Avery, Claire Ulanoff"),
+    new Song("Dont Worry Bout Me", 'Dont Worry Bout Me', "Adam Avery, Christopher Hawthorn"),
+    new Song("Coming Home", 'Coming Home', "Adam Avery, Jeremy Conn"),
+    new Song("If I Sang Hallelujah", 'If I Sang Hallelujah', "Adam Avery"),
+    new Song("What If It's Love", 'What If Its Love', "Adam Avery, Christopher Hawthorn"),
+    new Song("Fire Loves Wind", 'Fire Loves Wind', "Adam Avery, Nicolas Farmakalidas"),
+    new Song("29 Angels", '29 Angels', "Adam Avery, Michael Lee Collins"),
+    new Song("Chase", 'Chase', "Adam Avery, Amanda Delara Nikman, Tim Kellett"),
+    new Song("Diamonds & Dust", 'Diamonds & Dust', "Adam Avery, Christopher Hawthorn"),
+    new Song("Halfway To You", 'Halfway To You', "Adam Avery, Claire Ulanoff"),
+    new Song("Redefined", 'Redefined', "Adam Avery"),
+    new Song("Cubicle", 'Cubicle', "Adam Avery"),
+    new Song("Watermark", 'Watermark', "Adam Avery, The Dark Tenor"),
+    new Song("Spin", 'Spin', "Adam Avery, Claire Ulanoff, Jordan Otruba"),
+    new Song("Dollars & Sense (End Of The Money)", 'Dollars & Sense (End Of The Money)', "Adam Avery, Christopher Hawthorn"),
+    new Song("Just Got Real", 'Just Got Real', "Adam Avery, Janice Piftri"),
+    new Song("Take You To My Heart", 'Take You To My Heart', "Adam Avery, Basti Becks, Anthony Goldsbrough"),
+    new Song("Summertime", 'Summertime', "Adam Avery, Claire Ulanoff"),
+    new Song("On The Corner Of Lonely & Lost", 'On The Corner Of Lonely & Lost', "Adam Avery, Christopher Hawthorn"),
+    new Song("Because You Came", 'Because You Came', "Adam Avery, Christopher Hawthorn"),
+    new Song("I Know How Love Sounds", 'I Know How Love Sounds', "Adam Avery, Donovan Tucker, Greg Lambert"),
+    new Song("The Gift", 'The Gift', "Adam Avery, Donovan Tucker"),
 ];
 
 loadSong(songs[songIndex]);

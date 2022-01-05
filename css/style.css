@@ -660,14 +660,16 @@ nav a:hover {
 
 .track .song {
     width: 30%;
+    padding: 0 0 0 0;
 }
 
 .track .writers {
-    width: 30%;
+    width: 28%;
+    padding: 5px 20px 0 20px;
 }
 
 .track .artists {
-    width: 30%;
+    width: 32%;
 }
 
 .track .time {
@@ -689,7 +691,7 @@ nav a:hover {
 
     font-family: 'Raleway', snas-serif;
     background-color: #0a0a0a;
-    box-shadow: 6px 0px 15px 2px rgb(0, 0, 0);
+    box-shadow: 3px 0px 10px 2px rgb(0, 0, 0);
 
     display: flex;
     justify-content: space-between;
@@ -721,17 +723,17 @@ nav a:hover {
     height: 4px;
     background: #fff;
 
-    transition: 0.12s;
-    -webkit-transition: 0.12s;
-    -moz-transition-transition: 0.12s;
+    transition: 0.075s;
+    -webkit-transition: 0.075s;
+    -moz-transition-transition: 0.075s;
 }
 
 .audio-progress-hitbox:hover .audio-progress-cont {
     height: 8px;
 
-    transition: 0.12s;
-    -webkit-transition: 0.12s;
-    -moz-transition-transition: 0.12s;
+    transition: 0.075s;
+    -webkit-transition: 0.075s;
+    -moz-transition-transition: 0.075s;
 }
 
 .audio-progress {
@@ -795,24 +797,25 @@ nav a:hover {
     top: auto;
 
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: #fff;
 
     border-radius: 50px;
     overflow: hidden;
 
-    transition: 0.07s;
+    transition: 0.1s;
 }
 
 .volume-progress {
     width: 100%;
     height: 100%;
     background: #ff9914;
+    margin: 0 0 0 0;
 
     -webkit-transition: 0.05s;
     -ms-transition: 0.05s;
     -moz-transition: 0.05s;
-    transition: 0.05s;
+    transition: 0.1s;
 }
 
 .track-info {
