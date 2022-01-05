@@ -175,8 +175,8 @@ ul li {
 
 /* Using ID instead of class for JS */
 #navbar {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -606,7 +606,22 @@ nav a:hover {
 }
 
 .playing .track-title {
+    animation: fade 1.5s ease infinite;
     color: #ffb14b;
+}
+
+@keyframes fade {
+    0% {
+        color: #ffb14b;
+    }
+
+    50% {
+        color: rgba(255, 177, 75, 0.726);
+    }
+
+    100% {
+        color: #ffb14b;
+    }
 }
 
 .playlist .playing #play-button {
@@ -837,9 +852,9 @@ nav a:hover {
 }
 
 .track-info h5 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.1em;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 20px;
 }
@@ -847,7 +862,7 @@ nav a:hover {
 .track-info h6 {
     font-family: 'Raleway', sans-serif;
     font-size: 0.9em;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 15px;
 }
