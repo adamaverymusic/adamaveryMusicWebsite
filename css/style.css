@@ -57,7 +57,7 @@ body {
 }
 
 .master-width {
-    width: 70%;
+    width: 70% !important;
     margin: 0 auto;
 }
 
@@ -93,8 +93,8 @@ a:hover {
 
 .icon {
     color: #ffb259;
-    font-size: 1.5vw;
-    padding: 0px 1vw 0 0;
+    font-size: 1.5em;
+    padding: 0px 15px 0 0;
     margin: 0;
     transition: 0.2s;
     -webkit-transition: 0.2s;
@@ -111,18 +111,16 @@ a:hover {
 .header1 {
     font-family: 'Raleway', sans-serif;
     color: #fff;
-    font-size: 2.6vw;
+    font-size: 2.6em;
     font-weight: 700;
     letter-spacing: 0px;
     text-align: center;
-    margin-bottom: 1vw;
 }
 
 .sm-hr {
     background: #7a7a7a;
     border: solid 2px #7a7a7a;
-    margin-bottom: 1.5vw;
-    width: 8vw;
+    width: 125px;
 }
 
 .list-cont {
@@ -141,12 +139,12 @@ ul {
     text-align: left;
     font-weight: 300;
     color: #ffffff;
-    font-size: 1.6vw;
-    line-height: 2.6vw;
+    font-size: 1.6em;
+    line-height: 30px;
 }
 
 ul li {
-    padding: 0.4vw 0 0.4vw 2vw;
+    padding: 12px 0 12px 15px;
 }
 
 .flex-row {
@@ -184,7 +182,7 @@ ul li {
     align-items: center;
     background: rgba(14, 14, 14, 1);
     box-shadow: #0e0e0e 0px 0px 10px;
-    height: 4vw;
+    height: 65px;
     margin: 0 auto;
     width: 100%;
     position: fixed;
@@ -196,7 +194,7 @@ ul li {
 }
 
 .navCont {
-    width: 25vw;
+    width: 35vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -205,8 +203,8 @@ ul li {
 }
 
 nav a {
-    padding: 0.5vw 0px;
-    font-size: 1.2vw;
+    padding: 4px 0px;
+    font-size: 1.1vw;
     color: #fff;
     border: solid rgba(255, 255, 255, 0) 1px;
     transition: .2s;
@@ -228,7 +226,8 @@ nav a:hover {
 
 #home {
     font-family: 'Quicksand', sans-serif;
-    padding: 6vw 0 3vw 0;
+    padding: 50px 0 0px 0;
+    height: 90vh;
 }
 
 .intro-section {
@@ -243,7 +242,7 @@ nav a:hover {
 }
 
 .intro-section .flex-row .text-link {
-    font-size: 1.5vw;
+    font-size: 1.5em;
     font-weight: 500;
     font-style: normal;
     color: #ffb259;
@@ -258,16 +257,16 @@ nav a:hover {
 .intro-section h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    font-size: 3.3vw;
+    font-size: 3.3em;
     padding: 0 10px 0 0;
     color: #fff;
 }
 
 .intro-section p {
     margin: 10px 0 0 0;
-    font-size: 1.4vw;
+    font-size: 1.4em;
     font-weight: 300;
-    line-height: 3.6vh;
+    line-height: 32px;
 }
 
 .intro-section .img-cont {
@@ -296,8 +295,8 @@ nav a:hover {
 .img-row h5 {
     text-align: center;
     font-weight: 600;
-    font-size: 1.1vw;
-    padding: 1vw 0;
+    font-size: 1.1em;
+    padding: 12px 0;
 }
 
 .img-row-item {
@@ -399,10 +398,10 @@ nav a:hover {
     -moz-user-select: none;
     justify-content: center;
     align-items: center;
-    width: 4vw;
-    height: 4vw;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
-    border: 0.15vw solid #8d8d8d;
+    border: 2px solid #8d8d8d;
     outline: none;
     color: #fff;
     background: none;
@@ -436,7 +435,7 @@ nav a:hover {
 }
 
 #play-button i {
-    font-size: 1.6vw;
+    font-size: 1.5em;
     padding: 0 0 0 5%;
     margin: 0 auto;
     line-height: 0;
@@ -485,23 +484,22 @@ nav a:hover {
 }
 
 .playing .controller #play-button i {
-    font-size: 1.15vw !important;
+    font-size: 1.4em !important;
     padding: 0 0 0 0 !important;
 }
 
 /* CREDITS SPECIFIC CLASSES */
 
 #credits {
-    padding: 6vw 0;
+    padding: 100px 0;
     background: #292929;
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
 
 #credits iframe {
-    height: 25vw;
-    margin: 3vw 0 5vw 0;
-    border-radius: 0.8vw;
+    margin: 60px 0 70px 0;
+    border-radius: 15px;
     box-shadow: #141414 0px 0px 5px;
     transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -518,7 +516,7 @@ nav a:hover {
 /* CATALOGUE SPECIFIC CLASSES */
 
 #catalogue {
-    padding: 6vw 0;
+    padding: 100px 0;
     margin: 0 0 150px 0;
 }
 
@@ -530,13 +528,13 @@ nav a:hover {
 }
 
 .discographyTextCont h1 {
-    font-size: 3.4vw;
+    font-size: 3.4em;
 }
 
 .discographyTextCont i {
     color: #ffa42d;
     margin: 0 15px 0 0;
-    font-size: 4vw;
+    font-size: 4em;
 
 }
 
@@ -547,7 +545,6 @@ nav a:hover {
 .catalogue-key-cont {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    overflow-y: hidden !important;
     height: auto !important;
     border: none !important;
 }
@@ -579,18 +576,18 @@ nav a:hover {
     max-height: 60vh;
     overflow-y: scroll;
     box-sizing: content-box;
-    border-top: solid 0.15vw #fff;
-    border-bottom: solid 0.15vw #fff;
+    border-top: solid 2px #fff;
+    border-bottom: solid 2px #fff;
 }
 
 .playlist::-webkit-scrollbar {
-    width: 0.4vw;
+    width: 8px;
 }
 
 .playlist::-webkit-scrollbar-track {
     background: #313131;
     border-radius: 10px;
-    margin: 0.8vw 0;
+    margin: 15px 0;
 }
 
 .playlist::-webkit-scrollbar-thumb {
@@ -641,21 +638,12 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 1vw;
 
     width: 99%;
-    height: 3.5vw;
+    height: 60px;
     padding: 0;
     border-top: solid 1px #494949;
     border-bottom: solid 1px #494949;
-}
-
-.catalogue-key-cont .catalogue-key h6 {
-    font-size: 1.8vw;
-}
-
-.track h6 {
-    font-size: 1vw;
 }
 
 .track div {
@@ -666,20 +654,19 @@ nav a:hover {
 
 .track #play-button {
     position: relative;
-    min-width: 4vw;
     -webkit-transform: scale(0.6);
     -moz-transform: scale(0.6);
     -ms-transform: scale(0.6);
     transform: scale(0.6);
-    border: 0.2vw solid #8d8d8d;
+    border: 3px solid #8d8d8d;
 }
 
 .track #play-button:hover {
-    border: 0.2vw solid #ffffff;
+    border: 3px solid #ffffff;
 }
 
 .track #play-button:active {
-    border: 0.2vw solid #8d8d8d;
+    border: 3px solid #8d8d8d;
 }
 
 .track h6 {
@@ -710,7 +697,7 @@ nav a:hover {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 5vw;
+    height: 90px;
 }
 
 .audio-player {
@@ -727,19 +714,19 @@ nav a:hover {
 
     width: 100%;
     height: 100%;
-    padding: 0.75vw;
+    padding: 5px;
 }
 
 .audio-progress-hitbox {
     position: fixed;
-    bottom: 4.6vw;
+    bottom: 79px;
     z-index: 1;
 
     display: flex;
     align-items: center;
 
     width: 100%;
-    height: 0.9vw;
+    height: 25px;
 }
 
 .audio-progress-hitbox:hover {
@@ -748,7 +735,7 @@ nav a:hover {
 
 .audio-progress-cont {
     width: 100%;
-    height: 0.2vw;
+    height: 4px;
     background: #fff;
 
     transition: 0.075s;
@@ -757,7 +744,7 @@ nav a:hover {
 }
 
 .audio-progress-hitbox:hover .audio-progress-cont {
-    height: 0.36vw;
+    height: 8px;
 
     transition: 0.075s;
     -webkit-transition: 0.075s;
@@ -778,7 +765,7 @@ nav a:hover {
     display: flex;
     align-items: center;
 
-    height: 0.9vw;
+    height: 25px;
 }
 
 .volume-cont-hitbox:hover {
@@ -790,9 +777,16 @@ nav a:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 1vw;
 
-    margin: 0 1vw 0 0;
+    margin: 0 20px 0 0;
+}
+
+.volume {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
 }
 
 .volume-hitbox {
@@ -800,8 +794,8 @@ nav a:hover {
     align-items: center;
 
     margin: 0 0 0 10%;
-    width: 10vw;
-    height: 1vw;
+    width: 175px;
+    height: 30px;
 }
 
 .volume-hitbox {
@@ -818,7 +812,7 @@ nav a:hover {
     top: auto;
 
     width: 100%;
-    height: 0.2vw;
+    height: 4px;
     background: #fff;
 
     border-radius: 50px;
@@ -859,19 +853,18 @@ nav a:hover {
 
 .track-info h5 {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 700;
     letter-spacing: 0.5px;
-    line-height: 1.4vw;
+    line-height: 20px;
 }
 
 .track-info h6 {
     font-family: 'Raleway', sans-serif;
-    font-size: 0.9vw;
+    font-size: 0.9em;
     font-weight: 300;
     letter-spacing: 0.5px;
-    line-height: 1vw;
-    margin: 0;
+    line-height: 15px;
 }
 
 .controller {
@@ -892,8 +885,8 @@ nav a:hover {
 }
 
 .controller #play-button {
-    width: 2.6vw;
-    height: 2.6vw;
+    width: 50px;
+    height: 50px;
     background: #fff;
     border: none;
 }
@@ -903,18 +896,18 @@ nav a:hover {
 }
 
 .controller #play-button i {
-    font-size: 1.2vw;
+    font-size: 1.35em;
     color: #000;
 }
 
 .skip {
-    font-size: 1vw;
+    font-size: 1em;
     background: none;
     outline: none !important;
     border: none;
     color: #a7a7a7;
 
-    margin: 0 2.5vw;
+    margin: 0 40px;
 
     transition: 0.05s;
     -webkit-transition: 0.05s;
