@@ -16,7 +16,7 @@ const volProgress = document.querySelector('.volume-progress');
 
 var activePlayBtn = document.querySelectorAll('#play-button')[0];
 var draggingPlayer;
-var draggingVolume;
+var drggingVolume;
 
 // Song Count (keep track)
 let songIndex = 0;
@@ -48,12 +48,12 @@ const songs = [
     new Song("What If It's Love", 'What If Its Love', "Adam Avery, Christopher Hawthorn"),
     new Song("Fire Loves Wind", 'Fire Loves Wind', "Adam Avery, Nicolas Farmakalidas"),
     new Song("29 Angels", '29 Angels', "Adam Avery, Michael Lee Collins"),
-    new Song("Chase", 'Chase', "Adam Avery, Amanda Delara Nikman, Tim Kellett"),
+    new Song("Chase", 'Chase', "Adam Avery, Amanda Delara, Tim Kellett, Dante Leon"),
     new Song("Diamonds & Dust", 'Diamonds & Dust', "Adam Avery, Christopher Hawthorn"),
     new Song("Halfway To You", 'Halfway To You', "Adam Avery, Claire Ulanoff"),
     new Song("Redefined", 'Redefined', "Adam Avery"),
     new Song("Cubicle", 'Cubicle', "Adam Avery"),
-    new Song("Watermark", 'Watermark', "Adam Avery, The Dark Tenor"),
+    new Song("Watermark", 'Watermark', "Adam Avery, The Dark Tenor, Nico Farmakalidas"),
     new Song("Spin", 'Spin', "Adam Avery, Claire Ulanoff, Jordan Otruba"),
     new Song("Dollars & Sense (End Of The Money)", 'Dollars & Sense (End Of The Money)', "Adam Avery, Christopher Hawthorn"),
     new Song("Just Got Real", 'Just Got Real', "Adam Avery, Janice Piftri"),
